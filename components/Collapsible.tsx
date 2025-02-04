@@ -1,4 +1,4 @@
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useState, useEffect } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
@@ -7,15 +7,28 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
+export function Collapsible({ postId, children, title, isOpenProp, handleSavedOpen}: PropsWithChildren & { title: string, isOpenProp: boolean, handleSavedOpen: Function, postId: number }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(()=>{
+    console.log("IN USE EFFECT: ", isOpenProp)
+    setIsOpen(isOpenProp)
+  }, [isOpenProp])
+
+  const handleIsOpen = (val: boolean) =>{
+    setIsOpen(val)
+    handleSavedOpen(postId, val)
+  }
+
   const theme = useColorScheme() ?? 'light';
+
+  console.log("IS OPEN COLLAPSE: ", isOpen)
 
   return (
     <ThemedView>
       <TouchableOpacity
         style={styles.heading}
-        onPress={() => setIsOpen((value) => !value)}
+        onPress={() => handleIsOpen(!isOpen )}
         activeOpacity={0.8}>
         <IconSymbol
           name="chevron.right"

@@ -1,50 +1,11 @@
-# Welcome to your Expo app 👋
+# Persistant Storage React Native App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is my React Native app that is making use of `AsyncStorage` to persist data beyond local state. It works by adding values to the `openedPosts` key in my `AsyncStorage` instance (similar to `localStorage` in Reactjs).
 
-## Get started
+## Getting Started
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. First, clone this repo and run `yarn`.
+2. Next, run `yarn start` and then select which platform you want to run it on.
+3. After that, you will see instructions for the app on the homepage telling you to navifate to the `Feed` tab.
+4. Once in the `Feed` tab you can then open/collapse posts from a seeded list of posts json data.
+5. Open one post (or more), and then try restarting the app and navigating to the opened posts. You should see your previously opened posts still open in the UI!
